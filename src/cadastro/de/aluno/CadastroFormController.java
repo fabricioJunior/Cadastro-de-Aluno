@@ -48,7 +48,6 @@ public class CadastroFormController implements Initializable {
     private TextArea informaçõesText;
     private ArrayList<TextField> fields = new ArrayList<TextField>();
     private DaHelpsCadastroFormulário help = new DaHelpsCadastroFormulário();
-    private int index = 0;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -64,14 +63,14 @@ public class CadastroFormController implements Initializable {
         fields.add(nota3Text);
         cursoBox.getItems().addAll("Ciências Econômicas", "Engenharia da Computação",
                 "Engenharia Elétrica", "Finanças", "Medicina", "Música", "Odontologia", "Psicologia");
-
+        cursoBox.getSelectionModel().selectFirst();
     }
 
     private boolean textFieldVazio(ArrayList<TextField> textsFields) {
-        
+
         for (int x = 0; x < fields.size(); x++) {
-            if(fields.get(x) == null || fields.get(x).getText().length() == 0){
-              return true;
+            if (fields.get(x) == null || fields.get(x).getText().length() == 0) {
+                return true;
             }
         }
         return false;
@@ -95,6 +94,7 @@ public class CadastroFormController implements Initializable {
             if (!help.getAlunos().contains(novo)) {
                 help.getAlunos().add(novo);
                 informaçõesText.setText(help.getUltimoAlunoInformações());
+                limparCampos();
             } else {
                 JOptionPane.showMessageDialog(null, "Aluno já cadastrado, verifique o número de matrícula", "erro", JOptionPane.ERROR_MESSAGE);
             }
@@ -118,14 +118,40 @@ public class CadastroFormController implements Initializable {
     }
 
     public void proximoBtn_KeyPressed(KeyEvent e) {
-        if(e.getCode() == ENTER){
-           proximoBtn_Clicked();
+        if (e.getCode() == ENTER) {
+            proximoBtn_Clicked();
         }
     }
 
     public void anteriorBtn_KeyPressed(KeyEvent e) {
-        if(e.getCode() == ENTER){
-          anteriorBtn_Clicked();
+        if (e.getCode() == ENTER) {
+            anteriorBtn_Clicked();
         }
+    }
+
+    public void excluirBtn_Clicked() {
+        if (!help.deleteAluno()) {
+            JOptionPane.showMessageDialog(null, "Lista vazia", "erro", JOptionPane.ERROR_MESSAGE);
+        }
+        informaçõesText.setText(help.getUltimoAlunoInformações());
+    }
+
+    public void excluirBtn_KeyPressed(KeyEvent e) {
+        if (e.getCode() == ENTER) {
+            excluirBtn_Clicked();
+        }
+    }
+    
+    public void limparCampos(){
+      nomeText.clear();
+      sobrenomeText.clear();
+      emailText.clear();
+      diaText.clear();
+      mêsText.clear();
+      anoText.clear();
+      matriculaText.clear();
+      nota1Text.clear();
+      nota2Text.clear();
+      nota3Text.clear();
     }
 }

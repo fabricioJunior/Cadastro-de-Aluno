@@ -72,7 +72,7 @@
             <Font size="14.0" />
          </font>
       </Button>
-      <Button layoutX="494.0" layoutY="536.0" mnemonicParsing="false" text="Excluir">
+      <Button layoutX="494.0" layoutY="536.0" mnemonicParsing="false" onKeyPressed="#excluirBtn_KeyPressed" onMouseClicked="#excluirBtn_Clicked" text="Excluir">
          <font>
             <Font size="14.0" />
          </font>

@@ -27,7 +27,7 @@ public class Aluno extends Pessoa {
     public String getSituação() {
         if (getMedia() >= 7) {
             return "Aprovado por média";
-        } else if (getMedia() <= 6.9 && getMedia() <= 4) {
+        } else if (getMedia() <= 6.9 && getMedia() >= 4) {
             return "De AF";
         }
         return "Reprovado";
