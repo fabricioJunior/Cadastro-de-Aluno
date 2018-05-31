@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="571.0" prefWidth="556.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="cadastro.de.aluno.CadastroFormController">
+   <children>
+      <Label layoutX="15.0" layoutY="17.0" text="Nome">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="15.0" layoutY="47.0" text="Sobrenome">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="15.0" layoutY="107.0" text="Nascimento">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="15.0" layoutY="77.0" text="E-mail">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="15.0" layoutY="137.0" text="Curso">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="15.0" layoutY="167.0" text="Matrícula">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="15.0" layoutY="197.0" text="Notas">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="nomeText" layoutX="195.0" layoutY="16.0" prefHeight="25.0" prefWidth="358.0" promptText="Nome" />
+      <TextField fx:id="sobrenomeText" layoutX="195.0" layoutY="46.0" prefHeight="25.0" prefWidth="358.0" promptText="Sobrenome" />
+      <TextField fx:id="emailText" layoutX="195.0" layoutY="76.0" prefHeight="25.0" prefWidth="358.0" promptText="E-mail" />
+      <TextField id="diaText" fx:id="diaText" layoutX="195.0" layoutY="106.0" prefHeight="25.0" prefWidth="119.0" promptText="Dia" />
+      <TextField id="mêsText" fx:id="mêsText" layoutX="315.0" layoutY="106.0" prefHeight="25.0" prefWidth="119.0" promptText="Mês" />
+      <TextField id="anoText" fx:id="anoText" layoutX="434.0" layoutY="106.0" prefHeight="25.0" prefWidth="119.0" promptText="Ano" />
+      <ComboBox fx:id="cursoBox" layoutX="195.0" layoutY="136.0" prefHeight="25.0" prefWidth="358.0" />
+      <TextField fx:id="matriculaText" layoutX="195.0" layoutY="166.0" prefHeight="25.0" prefWidth="358.0" promptText="Matrícula" />
+      <TextField fx:id="nota1Text" layoutX="195.0" layoutY="196.0" prefHeight="25.0" prefWidth="119.0" promptText="Primeira Nota" />
+      <TextField fx:id="nota2Text" layoutX="315.0" layoutY="196.0" prefHeight="25.0" prefWidth="119.0" promptText="Segunda Nota" />
+      <TextField fx:id="nota3Text" layoutX="434.0" layoutY="196.0" prefHeight="25.0" prefWidth="119.0" promptText="Terceira Nota" />
+      <Button layoutX="195.0" layoutY="229.0" mnemonicParsing="false" onKeyPressed="#cadastraBtn_KeyPressed" onMouseClicked="#cadastraBtn_Clicked" text="Cadastrar">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <TextArea fx:id="informaçõesText" editable="false" layoutX="195.0" layoutY="267.0" prefHeight="227.0" prefWidth="358.0" />
+      <Button layoutX="195.0" layoutY="494.0" mnemonicParsing="false" onKeyPressed="#anteriorBtn_KeyPressed" onMouseClicked="#anteriorBtn_Clicked" text="&lt;-  Anteiror">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="463.0" layoutY="494.0" mnemonicParsing="false" onKeyPressed="#proximoBtn_KeyPressed" onMouseClicked="#proximoBtn_Clicked" text="Proxímo -&gt;">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="494.0" layoutY="536.0" mnemonicParsing="false" text="Excluir">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
