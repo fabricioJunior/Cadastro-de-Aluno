@@ -50,7 +50,7 @@ abstract public class Pessoa {
         return data.toString();
     }
 
-     public class Data {
+    public class Data {
 
         public int dia;
         public int mês;
