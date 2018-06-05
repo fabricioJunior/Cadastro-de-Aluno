@@ -76,6 +76,9 @@ public class CadastroFormController implements Initializable {
         return false;
     }
 
+    /**
+     *
+     */
     public void cadastraBtn_Clicked() {
 
         if (!textFieldVazio(fields)) {
@@ -103,32 +106,53 @@ public class CadastroFormController implements Initializable {
         }
     }
 
+    /**
+     *
+     * @param e
+     */
     public void cadastraBtn_KeyPressed(KeyEvent e) {
         if (e.getCode() == ENTER) {
             cadastraBtn_Clicked();
         }
     }
 
+    /**
+     *
+     */
     public void proximoBtn_Clicked() {
         informaçõesText.setText(help.AlunoProximo());
     }
 
+    /**
+     *
+     */
     public void anteriorBtn_Clicked() {
         informaçõesText.setText(help.AlunoAnterior());
     }
 
+    /**
+     *
+     * @param e
+     */
     public void proximoBtn_KeyPressed(KeyEvent e) {
         if (e.getCode() == ENTER) {
             proximoBtn_Clicked();
         }
     }
 
+    /**
+     *
+     * @param e
+     */
     public void anteriorBtn_KeyPressed(KeyEvent e) {
         if (e.getCode() == ENTER) {
             anteriorBtn_Clicked();
         }
     }
 
+    /**
+     *
+     */
     public void excluirBtn_Clicked() {
         if (!help.deleteAluno()) {
             JOptionPane.showMessageDialog(null, "Lista vazia", "erro", JOptionPane.ERROR_MESSAGE);
@@ -136,12 +160,19 @@ public class CadastroFormController implements Initializable {
         informaçõesText.setText(help.getUltimoAlunoInformações());
     }
 
+    /**
+     *
+     * @param e
+     */
     public void excluirBtn_KeyPressed(KeyEvent e) {
         if (e.getCode() == ENTER) {
             excluirBtn_Clicked();
         }
     }
     
+    /**
+     *
+     */
     public void limparCampos(){
       nomeText.clear();
       sobrenomeText.clear();

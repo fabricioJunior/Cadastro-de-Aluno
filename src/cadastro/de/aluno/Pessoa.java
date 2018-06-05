@@ -13,24 +13,46 @@ import java.util.Calendar;
  */
 abstract public class Pessoa {
     
+    /**
+     *
+     */
     protected String nome;
+
+    /**
+     *
+     */
     protected String sobrenome;
+
+    /**
+     *
+     */
     protected String email;
+
+    /**
+     *
+     */
     protected Data data;
 
     /**
      *
+     * @return 
+     * @return  
      */
     protected String nomeCompleto() {
         return nome + " " + sobrenome;
     }
 
+    /**
+     *
+     * @return idade da pessoa a parti das informações da váriavel 
+     * @see data
+     */
     protected int idade() {
         int idade;
         Calendar c = Calendar.getInstance();
         if (c.get(Calendar.MONTH) + 1 < data.mês) {
             idade = c.get(Calendar.YEAR) - 1 - data.ano;
-        } else if (c.get(Calendar.MONTH) + 1 == data.mês) {
+        } else if (c.get(Calendar.MONTH) + 1 == data.mês ) {
             if (Calendar.DAY_OF_MONTH < data.dia) {
                 idade = c.get(Calendar.YEAR) - 1 - data.ano;
             } else {
@@ -50,10 +72,24 @@ abstract public class Pessoa {
         return data.toString();
     }
 
-     public class Data {
+    /**
+     *
+     */
+    public class Data {
 
+        /**
+         *
+         */
         public int dia;
+
+        /**
+         *
+         */
         public int mês;
+
+        /**
+         *
+         */
         public int ano;
 
         @Override

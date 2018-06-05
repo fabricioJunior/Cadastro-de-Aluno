@@ -11,19 +11,50 @@ package cadastro.de.aluno;
  */
 public class Aluno extends Pessoa {
 
+    /**
+     *
+     */
     public String curso;
+
+    /**
+     *
+     */
     public String matricula;
+
+    /**
+     *
+     */
     public float nota1;
+
+    /**
+     *
+     */
     public float nota2;
+
+    /**
+     *
+     */
     public float nota3;
    
+    /**
+     *
+     */
     public Aluno (){
       data = new Data();
     }
+
+    /**
+     *
+     * @return
+     */
     public float getMedia() {
         return (nota1 + nota2 + nota3) / 3;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getSituação() {
         if (getMedia() >= 7) {
             return "Aprovado por média";
