@@ -156,8 +156,13 @@ public class CadastroFormController implements Initializable {
     public void excluirBtn_Clicked() {
         if (!help.deleteAluno()) {
             JOptionPane.showMessageDialog(null, "Lista vazia", "erro", JOptionPane.ERROR_MESSAGE);
+        }else if(help.getUltimoAlunoInformações() != null){
+           informaçõesText.setText(help.getUltimoAlunoInformações());
+        }else{
+           informaçõesText.setText("");
         }
-        informaçõesText.setText(help.getUltimoAlunoInformações());
+        
+       
     }
 
     /**
