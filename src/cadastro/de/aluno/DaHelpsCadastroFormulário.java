@@ -88,5 +88,14 @@ public class DaHelpsCadastroFormulário {
         }
         return null;
     }
-
+    public String filtro(String digitado) {
+        char[] palavra = digitado.toCharArray();
+        int qtd = palavra.length;
+        for (int x = 0; x < palavra.length; x++) {
+            if (palavra[x] == ',') {
+                palavra[x] = '.';
+            }
+        }
+        return String.valueOf(palavra);
+    }
 }

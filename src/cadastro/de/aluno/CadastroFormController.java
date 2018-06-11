@@ -75,15 +75,20 @@ public class CadastroFormController implements Initializable {
         }
         return false;
     }
-    private boolean IdadeValidas(){
-                                
+    private boolean idadeValida(Aluno teste){
+        try{
+          int x = teste.idade();
+        }catch(Exception ex){
+           return false;
+        }
         return true;
     }
     /**
      *
      */
     public void cadastraBtn_Clicked() {
-
+        
+        try{
         if (!textFieldVazio(fields)) {
             Aluno novo = new Aluno();
             novo.setNome(nomeText.getText()); 
@@ -94,10 +99,13 @@ public class CadastroFormController implements Initializable {
             novo.setAno(Integer.parseInt(anoText.getText())); 
             novo.setCurso(cursoBox.getSelectionModel().getSelectedItem().toString());
             novo.setMatricula(matriculaText.getText());
-            novo.setNota1(Float.parseFloat(nota1Text.getText()));  
-            novo.setNota2(Float.parseFloat(nota2Text.getText())); 
-            novo.setNota3(Float.parseFloat(nota3Text.getText())); 
-            if (!help.getAlunos().contains(novo)) {
+            novo.setNota1(Float.parseFloat(help.filtro(nota1Text.getText())));  
+            novo.setNota2(Float.parseFloat(help.filtro(nota2Text.getText()))); 
+            novo.setNota3(Float.parseFloat(help.filtro(nota3Text.getText()))); 
+            if(!idadeValida(novo)){
+               JOptionPane.showMessageDialog(null, "Data de nascimento invalida", "erro", JOptionPane.ERROR_MESSAGE);
+            }
+            else if (!help.getAlunos().contains(novo)) {
                 help.getAlunos().add(novo);
                 informaçõesText.setText(help.getUltimoAlunoInformações());
                 limparCampos();
@@ -107,8 +115,11 @@ public class CadastroFormController implements Initializable {
         } else {
             JOptionPane.showMessageDialog(null, "Dados(s) inválidos(s).Confira os dados fornecidos", "erro", JOptionPane.ERROR_MESSAGE);
         }
+        }catch(Exception ex){
+           JOptionPane.showMessageDialog(null, "Dados(s) inválidos(s).Confira os dados fornecidos", "erro", JOptionPane.ERROR_MESSAGE);
+        }
     }
-
+    
     /**
      *
      * @param e
