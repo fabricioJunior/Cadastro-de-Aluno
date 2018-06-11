@@ -77,7 +77,11 @@ public class CadastroFormController implements Initializable {
     }
     private boolean IdadeValidas(){
                                 
+<<<<<<< HEAD
     return true;
+=======
+        return true;
+>>>>>>> 62e2455f944092886d0e24f42268a691930a12a8
     }
     /**
      *
@@ -86,17 +90,17 @@ public class CadastroFormController implements Initializable {
 
         if (!textFieldVazio(fields)) {
             Aluno novo = new Aluno();
-            novo.nome = nomeText.getText();
-            novo.sobrenome = sobrenomeText.getText();
-            novo.email = emailText.getText();
-            novo.data.dia = Integer.parseInt(diaText.getText());
-            novo.data.mês = Integer.parseInt(mêsText.getText());
-            novo.data.ano = Integer.parseInt(anoText.getText());
-            novo.curso = cursoBox.getSelectionModel().getSelectedItem().toString();
-            novo.matricula = matriculaText.getText();
-            novo.nota1 = Float.parseFloat(nota1Text.getText());
-            novo.nota2 = Float.parseFloat(nota2Text.getText());
-            novo.nota3 = Float.parseFloat(nota3Text.getText());
+            novo.setNome(nomeText.getText()); 
+            novo.setSobrenome(sobrenomeText.getText()); 
+            novo.setEmail( emailText.getText()); 
+            novo.setDia(Integer.parseInt(diaText.getText())); 
+            novo.setMês(Integer.parseInt(mêsText.getText())); 
+            novo.setAno(Integer.parseInt(anoText.getText())); 
+            novo.setCurso(cursoBox.getSelectionModel().getSelectedItem().toString());
+            novo.setMatricula(matriculaText.getText());
+            novo.setNota1(Float.parseFloat(nota1Text.getText()));  
+            novo.setNota2(Float.parseFloat(nota2Text.getText())); 
+            novo.setNota3(Float.parseFloat(nota3Text.getText())); 
             if (!help.getAlunos().contains(novo)) {
                 help.getAlunos().add(novo);
                 informaçõesText.setText(help.getUltimoAlunoInformações());

@@ -5,63 +5,63 @@
  */
 package cadastro.de.aluno;
 
+import java.time.LocalDate;
+import java.time.Month;
+import java.time.Period;
 import java.util.Calendar;
+import java.util.Date;
 
 /**
  *
  * @author Fabricio Junior
  */
 abstract public class Pessoa {
+
+   
     
     /**
      *
      */
-    protected String nome;
+    private String nome;
 
     /**
      *
      */
-    protected String sobrenome;
+    private String sobrenome;
 
     /**
      *
      */
-    protected String email;
+    private String email;
 
     /**
      *
      */
-    protected Data data;
-
+    private LocalDate data;
+    
+    private int dia;
+    private int mês;
+    private int ano;
+   
     /**
      *
-     * @return 
-     * @return  
+     * @return @return
      */
     protected String nomeCompleto() {
-        return nome + " " + sobrenome;
+        return getNome() + " " + getSobrenome();
     }
-
+   
     /**
-     *
-     * @return idade da pessoa a parti das informações da váriavel 
+     * Codigo baseado na logica na resposta de utluiz 
+     * https://pt.stackoverflow.com/questions/69270/calcular-idade-por-dia-mes-e-ano
+     * @return idade da pessoa a parti das informações da váriavel
      * @see data
      */
     protected int idade() {
-        int idade;
-        Calendar c = Calendar.getInstance();
-        if (c.get(Calendar.MONTH) + 1 < data.mês) {
-            idade = c.get(Calendar.YEAR) - 1 - data.ano;
-        } else if (c.get(Calendar.MONTH) + 1 == data.mês ) {
-            if (Calendar.DAY_OF_MONTH < data.dia) {
-                idade = c.get(Calendar.YEAR) - 1 - data.ano;
-            } else {
-                idade = c.get(Calendar.YEAR) - data.ano;
-            }
-        } else {
-            idade = c.get(Calendar.YEAR) - data.ano;
-        }
-        return idade;
+        LocalDate dataDeAniversário = LocalDate.of(ano, mês, dia);
+        LocalDate dataAtual = LocalDate.now();
+        Period periodo = Period.between(dataDeAniversário, dataAtual);
+        return periodo.getYears();
     }
 
     /**
@@ -69,12 +69,82 @@ abstract public class Pessoa {
      * @return
      */
     protected String getDataDeNascimento() {
-        return data.toString();
+        return dia + "/" + mês + "/" + ano;
+    }
+   
+    protected void setDia(int dia) {
+       this.dia = dia;
+    }
+
+    protected void setMês(int mês) {
+       this.mês = mês;
+    } 
+
+<<<<<<< HEAD
+=======
+    protected void setAno(int ano) {
+       this.ano = ano;
+    }
+>>>>>>> 62e2455f944092886d0e24f42268a691930a12a8
+    /**
+     * @return the dia
+     */
+    protected int getDia() {
+        return dia;
     }
 
     /**
-     *
+     * @return the mês
      */
+    protected int getMês() {
+        return mês;
+    }
+
+    /**
+     * @return the ano
+     */
+    protected int getAno() {
+        return ano;
+    }
+     /**
+     * @return the nome
+     */
+    public String getNome() {
+        return nome;
+    }
+
+    /**
+     * @param nome the nome to set
+     */
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    /**
+     * @return the sobrenome
+     */
+    public String getSobrenome() {
+        return sobrenome;
+    }
+
+    /**
+     * @param sobrenome the sobrenome to set
+     */
+    public void setSobrenome(String sobrenome) {
+        this.sobrenome = sobrenome;
+    }
+
+    /**
+     * @return the email
+     */
+    public String getEmail() {
+        return email;
+    }
+
+    /**
+     * @param email the email to set
+     */
+<<<<<<< HEAD
     public class Data {
 
         /**
@@ -96,6 +166,10 @@ abstract public class Pessoa {
         public String toString() {
             return dia + "/" + mês + "/" + ano;
         }
+=======
+    public void setEmail(String email) {
+        this.email = email;
+>>>>>>> 62e2455f944092886d0e24f42268a691930a12a8
     }
 
 }

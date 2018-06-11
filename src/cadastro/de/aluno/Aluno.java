@@ -5,42 +5,111 @@
  */
 package cadastro.de.aluno;
 
+import java.time.LocalDate;
+
 /**
  *
  * @author Fabricio Junior
  */
 public class Aluno extends Pessoa {
 
-    /**
-     *
-     */
-    public String curso;
+    private String curso;
 
     /**
      *
      */
-    public String matricula;
+    private String matricula;
 
     /**
      *
      */
-    public float nota1;
+    private float nota1;
 
     /**
      *
      */
-    public float nota2;
+    private float nota2;
 
     /**
      *
      */
-    public float nota3;
+    private float nota3;
    
-    /**
+    
+      /**
      *
      */
     public Aluno (){
-      data = new Data();
+      
+    }
+    /**
+     * @return the curso
+     */
+    public String getCurso() {
+        return curso;
+    }
+
+    /**
+     * @param curso the curso to set
+     */
+    public void setCurso(String curso) {
+        this.curso = curso;
+    }
+
+    /**
+     * @return the matricula
+     */
+    public String getMatricula() {
+        return matricula;
+    }
+
+    /**
+     * @param matricula the matricula to set
+     */
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
+    }
+
+    /**
+     * @return the nota1
+     */
+    public float getNota1() {
+        return nota1;
+    }
+
+    /**
+     * @param nota1 the nota1 to set
+     */
+    public void setNota1(float nota1) {
+        this.nota1 = nota1;
+    }
+
+    /**
+     * @return the nota2
+     */
+    public float getNota2() {
+        return nota2;
+    }
+
+    /**
+     * @param nota2 the nota2 to set
+     */
+    public void setNota2(float nota2) {
+        this.nota2 = nota2;
+    }
+
+    /**
+     * @return the nota3
+     */
+    public float getNota3() {
+        return nota3;
+    }
+
+    /**
+     * @param nota3 the nota3 to set
+     */
+    public void setNota3(float nota3) {
+        this.nota3 = nota3;
     }
 
     /**
@@ -48,7 +117,7 @@ public class Aluno extends Pessoa {
      * @return
      */
     public float getMedia() {
-        return (nota1 + nota2 + nota3) / 3;
+        return (getNota1() + getNota2() + getNota3()) / 3;
     }
 
     /**
@@ -69,7 +138,7 @@ public class Aluno extends Pessoa {
 
         if (x instanceof Aluno) {
             Aluno a = (Aluno) x;
-            if (this.matricula == null ? a.matricula == null : this.matricula.equals(a.matricula)) {
+            if (this.getMatricula() == null ? a.getMatricula() == null : this.getMatricula().equals(a.getMatricula())) {
                 return true;
             }
         }
@@ -79,13 +148,13 @@ public class Aluno extends Pessoa {
     public String toString() {
         String formatado
                 = "Nome: " + nomeCompleto() + "\n"
-                + "E-mail: " + email + "\n"
+                + "E-mail: " + getEmail() + "\n"
                 + "Idade: " + idade() + "\n"
                 + "Data De Nascimento:" + getDataDeNascimento() + "\n"
-                + "Curso: " + curso + "\n"
-                + "Matrícula: " + matricula + "\n"
-                + "Notas: " + nota1 + "," + nota2 + "," + nota3 + "\n"
-                + "Média:" + getMedia() + "\n"
+                + "Curso: " + getCurso() + "\n"
+                + "Matrícula: " + getMatricula() + "\n"
+                + "Notas: " + getNota1() + "," + getNota2() + "," + getNota3() + "\n"
+                + "Média: " + getMedia() + "\n"
                 + "Situação:" + getSituação();
         return formatado;
     }
