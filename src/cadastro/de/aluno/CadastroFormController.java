@@ -77,7 +77,7 @@ public class CadastroFormController implements Initializable {
     }
     private boolean IdadeValidas(){
                                 
-    
+    return true;
     }
     /**
      *

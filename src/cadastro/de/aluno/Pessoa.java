@@ -72,12 +72,9 @@ abstract public class Pessoa {
         return data.toString();
     }
 
-<<<<<<< HEAD
     /**
      *
      */
-=======
->>>>>>> 211f21cdbf0d538d03cfeda8bcff990521115c30
     public class Data {
 
         /**
