@@ -193,4 +193,17 @@ public class CadastroFormController implements Initializable {
       nota2Text.clear();
       nota3Text.clear();
     }
+   
+    private boolean ContemLetras(String correção) {
+        float valor;
+        if (correção != null) {
+            try {
+                valor = Float.parseFloat(correção);
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(null, "Digite um valor válido na segunda área de texto", "Informação", JOptionPane.INFORMATION_MESSAGE);
+                return true;
+            }
+        }
+        return false;
+    }
 }
