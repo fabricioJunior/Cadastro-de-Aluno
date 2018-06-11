@@ -30,10 +30,18 @@ public class Gui extends Application {
         primaryStage.show();
     }
 
+    /**
+     *
+     */
     public void Show() {
         launch();
     }
     ///Retira exeção
+
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
 
     }

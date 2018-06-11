@@ -2,11 +2,15 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+<<<<<<< HEAD
         <group>
             <file>file:/C:/Users/fmns8/OneDrive/Docs/GitHub/Cadastro-de-Aluno/src/cadastro/de/aluno/Aluno.java</file>
             <file>file:/C:/Users/fmns8/OneDrive/Docs/GitHub/Cadastro-de-Aluno/src/cadastro/de/aluno/CadastroFormController.java</file>
             <file>file:/C:/Users/fmns8/OneDrive/Docs/GitHub/Cadastro-de-Aluno/src/cadastro/de/aluno/CadastroDeAluno.java</file>
             <file>file:/C:/Users/fmns8/OneDrive/Docs/GitHub/Cadastro-de-Aluno/src/cadastro/de/aluno/Pessoa.java</file>
         </group>
+=======
+        <group/>
+>>>>>>> e306f053a86d941d84368123282bec1f68546bac
     </open-files>
 </project-private>
