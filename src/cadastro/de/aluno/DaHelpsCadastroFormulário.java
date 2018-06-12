@@ -21,13 +21,13 @@ public class DaHelpsCadastroFormulário {
      * @return
      */
     public boolean deleteAluno() {
-       try{
-        if (alunos.size() > 0) {
-            alunos.remove(index);
+        try {
+            if (alunos.size() > 0) {
+                alunos.remove(index);
+                return true;
+            }
+        } catch (Exception ex) {
             return true;
-          }
-        }catch(Exception ex){
-             return true;
         }
         return false;
     }
@@ -39,9 +39,11 @@ public class DaHelpsCadastroFormulário {
     public ArrayList<Aluno> getAlunos() {
         return alunos;
     }
-    public int getIndex(){
-         return index;
+
+    public int getIndex() {
+        return index;
     }
+
     /**
      *
      * @return
@@ -63,13 +65,13 @@ public class DaHelpsCadastroFormulário {
      * @return
      */
     public String getUltimoAlunoInformações() {
-        try{
-        int tamanho = alunos.size();
-        index = tamanho - 1;
-        String addPosi = "Pos:" + (tamanho) + "\n" + alunos.get(index).toString();
-        return addPosi;
-        }catch(Exception Ex){
-           return null;
+        try {
+            int tamanho = alunos.size();
+            index = tamanho - 1;
+            String addPosi = "Pos:" + (tamanho) + "\n" + alunos.get(index).toString();
+            return addPosi;
+        } catch (Exception Ex) {
+            return null;
         }
     }
 
@@ -89,4 +91,14 @@ public class DaHelpsCadastroFormulário {
         return null;
     }
 
+    public String filtro(String digitado) {
+        char[] palavra = digitado.toCharArray();
+        int qtd = palavra.length;
+        for (int x = 0; x < palavra.length; x++) {
+            if (palavra[x] == ',') {
+                palavra[x] = '.';
+            }
+        }
+        return String.valueOf(palavra);
+    }
 }
