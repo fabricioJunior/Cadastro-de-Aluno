@@ -17,8 +17,8 @@ public class DaHelpsCadastroFormulário {
     private int index = 0;
 
     /**
-     *
-     * @return
+     * Métdo Excluir
+     * @return remove da lista um aluno previamente cadastrado
      */
     public boolean deleteAluno() {
         try {
@@ -40,6 +40,7 @@ public class DaHelpsCadastroFormulário {
         return alunos;
     }
 
+    
     /**
      *
      * @return
@@ -49,8 +50,8 @@ public class DaHelpsCadastroFormulário {
     }
 
     /**
-     *
-     * @return
+     *Método Proximo
+     * @return 
      */
     public String AlunoProximo() {
         if (alunos.size() > 0) {
@@ -58,21 +59,21 @@ public class DaHelpsCadastroFormulário {
             if (index > alunos.size() - 1) {
                 index = 0;
             }
-            String addPosi = "Pos:" + (index + 1) + "\n" + alunos.get(index).toString();
+            String addPosi = "Pos: " + (index + 1) + "\n" + alunos.get(index).toString();
             return addPosi;
         }
         return null;
     }
 
     /**
-     *
+     *Método
      * @return
      */
     public String getUltimoAlunoInformações() {
         try {
             int tamanho = alunos.size();
             index = tamanho - 1;
-            String addPosi = "Pos:" + (tamanho) + "\n" + alunos.get(index).toString();
+            String addPosi = "Pos: " + (tamanho) + "\n" + alunos.get(index).toString();
             return addPosi;
         } catch (Exception Ex) {
             return null;
@@ -80,8 +81,8 @@ public class DaHelpsCadastroFormulário {
     }
 
     /**
-     *
-     * @return
+     *Métdo Anterior
+     * @return 
      */
     public String AlunoAnterior() {
         if (alunos.size() > 0) {
@@ -89,7 +90,7 @@ public class DaHelpsCadastroFormulário {
             if (index < 0) {
             index = alunos.size() - 1;
             }
-            String addPosi = "Pos:" + (index + 1) + "\n" + alunos.get(index).toString();
+            String addPosi = "Pos: " + (index + 1) + "\n" + alunos.get(index).toString();
             return addPosi;
         }
         return null;
@@ -98,7 +99,7 @@ public class DaHelpsCadastroFormulário {
     /**
      *
      * @param digitado
-     * @return
+     * @return substituição de "," (digitado eventualmente pelo usuário) por "."
      */
     public String filtro(String digitado) {
         char[] palavra = digitado.toCharArray();

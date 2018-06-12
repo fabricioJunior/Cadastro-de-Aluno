@@ -5,6 +5,7 @@
  */
 package cadastro.de.aluno;
 
+import java.awt.HeadlessException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -47,8 +48,8 @@ public class CadastroFormController implements Initializable {
     @FXML
     private TextArea informaçõesText;
 
-    private ArrayList<TextField> fields = new ArrayList<TextField>();
-    private DaHelpsCadastroFormulário help = new DaHelpsCadastroFormulário();
+    private final ArrayList<TextField> fields = new ArrayList<>();
+    private final DaHelpsCadastroFormulário help = new DaHelpsCadastroFormulário();
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -77,52 +78,54 @@ public class CadastroFormController implements Initializable {
         return false;
     }
 
-    private boolean idadeValida(Aluno teste){
-        try{
-          int x = teste.idade();
-        }catch(Exception ex){
-           return false;
+    private boolean idadeValida(Aluno teste) {
+        try {
+            int x = teste.idade();
+        } catch (Exception ex) {
+            return false;
         }
         return true;
     }
+
     /**
-     *
+     * Método para cadastrar o aluno atual e receber inforações do usuário
+     * seguinte
      */
     public void cadastraBtn_Clicked() {
-        
-        try{
-        if (!textFieldVazio(fields)) {
-            Aluno novo = new Aluno();
-            novo.setNome(nomeText.getText()); 
-            novo.setSobrenome(sobrenomeText.getText()); 
-            novo.setEmail( emailText.getText()); 
-            novo.setDia(Integer.parseInt(diaText.getText())); 
-            novo.setMês(Integer.parseInt(mêsText.getText())); 
-            novo.setAno(Integer.parseInt(anoText.getText())); 
-            novo.setCurso(cursoBox.getSelectionModel().getSelectedItem().toString());
-            novo.setMatricula(matriculaText.getText());
-            novo.setNota1(Float.parseFloat(help.filtro(nota1Text.getText())));  
-            novo.setNota2(Float.parseFloat(help.filtro(nota2Text.getText()))); 
-            novo.setNota3(Float.parseFloat(help.filtro(nota3Text.getText()))); 
-            if(!idadeValida(novo)){
-               JOptionPane.showMessageDialog(null, "Data de nascimento invalida", "erro", JOptionPane.ERROR_MESSAGE);
-            }
-            else if (!help.getAlunos().contains(novo)) {
-                help.getAlunos().add(novo);
-                informaçõesText.setText(help.getUltimoAlunoInformações());
-                limparCampos();
+
+        try {
+            if (!textFieldVazio(fields)) {
+                Aluno novo = new Aluno();
+                novo.setNome(nomeText.getText());
+                novo.setSobrenome(sobrenomeText.getText());
+                novo.setEmail(emailText.getText());
+                novo.setDia(Integer.parseInt(diaText.getText()));
+                novo.setMês(Integer.parseInt(mêsText.getText()));
+                novo.setAno(Integer.parseInt(anoText.getText()));
+                novo.setCurso(cursoBox.getSelectionModel().getSelectedItem().toString());
+                novo.setMatricula(matriculaText.getText());
+                novo.setNota1(Float.parseFloat(help.filtro(nota1Text.getText())));
+                novo.setNota2(Float.parseFloat(help.filtro(nota2Text.getText())));
+                novo.setNota3(Float.parseFloat(help.filtro(nota3Text.getText())));
+                if (!idadeValida(novo)) {
+                    JOptionPane.showMessageDialog(null, "Data de nascimento invalida", "erro", JOptionPane.ERROR_MESSAGE);
+                } else if (!help.getAlunos().contains(novo)) {
+                    help.getAlunos().add(novo);
+                    informaçõesText.setText(help.getUltimoAlunoInformações());
+                    limparCampos();
+                } else {
+                    JOptionPane.showMessageDialog(null, "Aluno já cadastrado, verifique o número de matrícula", "erro", JOptionPane.ERROR_MESSAGE);
+                }
             } else {
-                JOptionPane.showMessageDialog(null, "Aluno já cadastrado, verifique o número de matrícula", "erro", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Dados(s) inválidos(s).Confira os dados fornecidos", "erro", JOptionPane.ERROR_MESSAGE);
             }
-        } else {
+        } catch (HeadlessException | NumberFormatException ex) {
             JOptionPane.showMessageDialog(null, "Dados(s) inválidos(s).Confira os dados fornecidos", "erro", JOptionPane.ERROR_MESSAGE);
         }
-        }catch(Exception ex){
-           JOptionPane.showMessageDialog(null, "Dados(s) inválidos(s).Confira os dados fornecidos", "erro", JOptionPane.ERROR_MESSAGE);
-        }
     }
-    
+
     /**
+     * Cadastro dos dados do usuário
      *
      * @param e
      */
@@ -133,20 +136,21 @@ public class CadastroFormController implements Initializable {
     }
 
     /**
-     *
+     * Exibe os dados do próximo usuário da lista
      */
     public void proximoBtn_Clicked() {
         informaçõesText.setText(help.AlunoProximo());
     }
 
     /**
-     *
+     * Exibe os dados do usuário anterior da lista
      */
     public void anteriorBtn_Clicked() {
         informaçõesText.setText(help.AlunoAnterior());
     }
 
     /**
+     * Exibe os dados do próximo usuário da lista
      *
      * @param e
      */
@@ -157,6 +161,7 @@ public class CadastroFormController implements Initializable {
     }
 
     /**
+     * Exibe os dados do usuário anterior da lista
      *
      * @param e
      */
@@ -167,21 +172,21 @@ public class CadastroFormController implements Initializable {
     }
 
     /**
-     *
+     * Exclui o usuário atual da lista
      */
     public void excluirBtn_Clicked() {
         if (!help.deleteAluno()) {
             JOptionPane.showMessageDialog(null, "Lista vazia", "erro", JOptionPane.ERROR_MESSAGE);
-        }else if(help.getUltimoAlunoInformações() != null){
-           informaçõesText.setText(help.getUltimoAlunoInformações());
-        }else{
-           informaçõesText.setText("");
+        } else if (help.getUltimoAlunoInformações() != null) {
+            informaçõesText.setText(help.getUltimoAlunoInformações());
+        } else {
+            informaçõesText.setText("");
         }
-        
-       
+
     }
 
     /**
+     * Exclui o usuário atual da lista
      *
      * @param e
      */
@@ -190,23 +195,23 @@ public class CadastroFormController implements Initializable {
             excluirBtn_Clicked();
         }
     }
-    
+
     /**
-     *
+     * Exclui todos os dados digitados na área de texto
      */
-    public void limparCampos(){
-      nomeText.clear();
-      sobrenomeText.clear();
-      emailText.clear();
-      diaText.clear();
-      mêsText.clear();
-      anoText.clear();
-      matriculaText.clear();
-      nota1Text.clear();
-      nota2Text.clear();
-      nota3Text.clear();
+    public void limparCampos() {
+        nomeText.clear();
+        sobrenomeText.clear();
+        emailText.clear();
+        diaText.clear();
+        mêsText.clear();
+        anoText.clear();
+        matriculaText.clear();
+        nota1Text.clear();
+        nota2Text.clear();
+        nota3Text.clear();
     }
-   
+
     private boolean ContemLetras(String correção) {
         float valor;
         if (correção != null) {

@@ -1,11 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package cadastro.de.aluno;
-
-import java.time.LocalDate;
 
 /**
  * @author Fabricio Junior
@@ -17,10 +10,10 @@ public class Aluno extends Pessoa {
     private float nota1;
     private float nota2;
     private float nota3;
-    
-    
+
     /**
-     *MÉTODO PARA CALCULAR A MÉDIA DO ALUNO
+     * Método para calcular a média do aluno
+     *
      * @return média das três notas: nota1, nota2, nota3
      */
     public float getMedia() {
@@ -28,7 +21,8 @@ public class Aluno extends Pessoa {
     }
 
     /**
-     *MÉTODO PARA A SITUAÇÃO FINAL DO ALUNO
+     * Método para a situação final do aluno
+     *
      * @return "Aprovado por média", "Reprovado" ou "De AF"
      */
     public String getSituação() {
@@ -40,15 +34,13 @@ public class Aluno extends Pessoa {
         return "Reprovado";
     }
 
-   
     /**
      *
      */
-    public Aluno (){
-      
+    public Aluno() {
+
     }
-    
-    
+
     /**
      * @return the curso
      */
@@ -63,7 +55,6 @@ public class Aluno extends Pessoa {
         this.curso = curso;
     }
 
-    
     /**
      * @return the matricula
      */
@@ -120,11 +111,12 @@ public class Aluno extends Pessoa {
         this.nota3 = nota3;
     }
 
-
     /**
-     *MÉTODO equals SOBRESCRITO
+     * Método equals sobrescrito verifica se dois objetos do tipo Aluno são
+     * iguais a partir da matrícula
+     *
      * @param x
-     * @return 
+     * @return
      */
     @Override
     public boolean equals(Object x) {
@@ -139,7 +131,8 @@ public class Aluno extends Pessoa {
     }
 
     /**
-     * MÉTODO toString SOBRESCRITO
+     * Método toString sobrescrito
+     *
      * @return exibição dos dados fornecidos pelo usúario
      */
     @Override
