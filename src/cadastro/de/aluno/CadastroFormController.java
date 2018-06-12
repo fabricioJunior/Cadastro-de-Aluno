@@ -46,6 +46,7 @@ public class CadastroFormController implements Initializable {
     private TextField nota3Text;
     @FXML
     private TextArea informaçõesText;
+    
     private ArrayList<TextField> fields = new ArrayList<TextField>();
     private DaHelpsCadastroFormulário help = new DaHelpsCadastroFormulário();
 
@@ -75,22 +76,14 @@ public class CadastroFormController implements Initializable {
         }
         return false;
     }
-<<<<<<< HEAD
+
     private boolean idadeValida(Aluno teste){
         try{
           int x = teste.idade();
         }catch(Exception ex){
            return false;
         }
-=======
-    private boolean IdadeValidas(){
-                                
-<<<<<<< HEAD
-    return true;
-=======
->>>>>>> d00c9cf965a8a6ba68709a8d5c46a79e324c6a49
         return true;
->>>>>>> 62e2455f944092886d0e24f42268a691930a12a8
     }
     /**
      *

@@ -8,40 +8,47 @@ package cadastro.de.aluno;
 import java.time.LocalDate;
 
 /**
- *
  * @author Fabricio Junior
  */
 public class Aluno extends Pessoa {
 
     private String curso;
-
-    /**
-     *
-     */
     private String matricula;
-
-    /**
-     *
-     */
     private float nota1;
-
-    /**
-     *
-     */
     private float nota2;
+    private float nota3;
+    
+    
+    /**
+     *MÉTODO PARA CALCULAR A MÉDIA DO ALUNO
+     * @return média das três notas: nota1, nota2, nota3
+     */
+    public float getMedia() {
+        return (getNota1() + getNota2() + getNota3()) / 3;
+    }
 
     /**
-     *
+     *MÉTODO PARA A SITUAÇÃO FINAL DO ALUNO
+     * @return "Aprovado por média", "Reprovado" ou "De AF"
      */
-    private float nota3;
+    public String getSituação() {
+        if (getMedia() >= 7) {
+            return "Aprovado por média";
+        } else if (getMedia() <= 6.9 && getMedia() >= 4) {
+            return "De AF";
+        }
+        return "Reprovado";
+    }
+
    
-    
-      /**
+    /**
      *
      */
     public Aluno (){
       
     }
+    
+    
     /**
      * @return the curso
      */
@@ -56,6 +63,7 @@ public class Aluno extends Pessoa {
         this.curso = curso;
     }
 
+    
     /**
      * @return the matricula
      */
@@ -112,27 +120,12 @@ public class Aluno extends Pessoa {
         this.nota3 = nota3;
     }
 
-    /**
-     *
-     * @return
-     */
-    public float getMedia() {
-        return (getNota1() + getNota2() + getNota3()) / 3;
-    }
 
     /**
-     *
-     * @return
+     *MÉTODO equals SOBRESCRITO
+     * @param x
+     * @return 
      */
-    public String getSituação() {
-        if (getMedia() >= 7) {
-            return "Aprovado por média";
-        } else if (getMedia() <= 6.9 && getMedia() >= 4) {
-            return "De AF";
-        }
-        return "Reprovado";
-    }
-
     @Override
     public boolean equals(Object x) {
 
@@ -144,18 +137,23 @@ public class Aluno extends Pessoa {
         }
         return false;
     }
+
+    /**
+     * MÉTODO toString SOBRESCRITO
+     * @return exibição dos dados fornecidos pelo usúario
+     */
     @Override
     public String toString() {
         String formatado
                 = "Nome: " + nomeCompleto() + "\n"
                 + "E-mail: " + getEmail() + "\n"
                 + "Idade: " + idade() + "\n"
-                + "Data De Nascimento:" + getDataDeNascimento() + "\n"
+                + "Data De Nascimento: " + getDataDeNascimento() + "\n"
                 + "Curso: " + getCurso() + "\n"
                 + "Matrícula: " + getMatricula() + "\n"
-                + "Notas: " + getNota1() + "," + getNota2() + "," + getNota3() + "\n"
+                + "Notas: " + getNota1() + ", " + getNota2() + ", " + getNota3() + "\n"
                 + "Média: " + getMedia() + "\n"
-                + "Situação:" + getSituação();
+                + "Situação: " + getSituação();
         return formatado;
     }
 }

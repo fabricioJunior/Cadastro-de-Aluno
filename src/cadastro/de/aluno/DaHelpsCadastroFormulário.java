@@ -40,6 +40,10 @@ public class DaHelpsCadastroFormulário {
         return alunos;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getIndex() {
         return index;
     }
@@ -83,7 +87,7 @@ public class DaHelpsCadastroFormulário {
         if (alunos.size() > 0) {
             index--;
             if (index < 0) {
-                index = alunos.size() - 1;
+            index = alunos.size() - 1;
             }
             String addPosi = "Pos:" + (index + 1) + "\n" + alunos.get(index).toString();
             return addPosi;
@@ -91,6 +95,11 @@ public class DaHelpsCadastroFormulário {
         return null;
     }
 
+    /**
+     *
+     * @param digitado
+     * @return
+     */
     public String filtro(String digitado) {
         char[] palavra = digitado.toCharArray();
         int qtd = palavra.length;
