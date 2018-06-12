@@ -2,22 +2,9 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-<<<<<<< HEAD
-<<<<<<< HEAD
         <group>
-            <file>file:/C:/Users/fmns8/OneDrive/Docs/GitHub/Cadastro-de-Aluno/src/cadastro/de/aluno/Aluno.java</file>
-            <file>file:/C:/Users/fmns8/OneDrive/Docs/GitHub/Cadastro-de-Aluno/src/cadastro/de/aluno/CadastroFormController.java</file>
-            <file>file:/C:/Users/fmns8/OneDrive/Docs/GitHub/Cadastro-de-Aluno/src/cadastro/de/aluno/CadastroDeAluno.java</file>
             <file>file:/C:/Users/fmns8/OneDrive/Docs/GitHub/Cadastro-de-Aluno/src/cadastro/de/aluno/Pessoa.java</file>
+            <file>file:/C:/Users/fmns8/OneDrive/Docs/GitHub/Cadastro-de-Aluno/src/cadastro/de/aluno/Aluno.java</file>
         </group>
-=======
-        <group/>
->>>>>>> e306f053a86d941d84368123282bec1f68546bac
-=======
-        <group>
-            <file>file:/C:/Users/Fabricio%20Junior/Documents/NetBeansProjects/Cadastro-de-Aluno/src/cadastro/de/aluno/Pessoa.java</file>
-            <file>file:/C:/Users/Fabricio%20Junior/Documents/NetBeansProjects/Cadastro-de-Aluno/src/cadastro/de/aluno/Aluno.java</file>
-        </group>
->>>>>>> 62e2455f944092886d0e24f42268a691930a12a8
     </open-files>
 </project-private>

@@ -6,16 +6,14 @@
 package cadastro.de.aluno;
 
 import java.time.LocalDate;
-import java.time.Month;
 import java.time.Period;
-import java.util.Calendar;
-import java.util.Date;
 
 /**
  *
  * @author Fabricio Junior
  */
 abstract public class Pessoa {
+
 
    
     
@@ -42,19 +40,20 @@ abstract public class Pessoa {
     private int dia;
     private int mês;
     private int ano;
-   
+
     /**
-     *
-     * @return @return
+     * Método para concatenar nome e sobrenome fornecidos pelo usuário
+     * @return nome completo do usuário
      */
     protected String nomeCompleto() {
         return getNome() + " " + getSobrenome();
     }
-   
+
+    
     /**
-     * Codigo baseado na logica na resposta de utluiz 
+     * Método para calcular a idade do usuário. Esses trecho pode ser acessado em: 
      * https://pt.stackoverflow.com/questions/69270/calcular-idade-por-dia-mes-e-ano
-     * @return idade da pessoa a parti das informações da váriavel
+     * @return idade da pessoa a partir das váriaveis dia, mês e ano.
      * @see data
      */
     protected int idade() {
@@ -64,14 +63,18 @@ abstract public class Pessoa {
         return periodo.getYears();
     }
 
+
+ 
+
     /**
-     *
-     * @return
+     * Método para a data de nascimento
+     * @return data de nascimento do usuário: "dia/mês/ano";
      */
     protected String getDataDeNascimento() {
         return dia + "/" + mês + "/" + ano;
     }
    
+
     protected void setDia(int dia) {
        this.dia = dia;
     }
@@ -105,7 +108,10 @@ abstract public class Pessoa {
     protected int getAno() {
         return ano;
     }
-     /**
+ 
+    
+    /**
+
      * @return the nome
      */
     public String getNome() {
@@ -138,6 +144,7 @@ abstract public class Pessoa {
      */
     public String getEmail() {
         return email;
+
     }
 
     /**
@@ -146,6 +153,5 @@ abstract public class Pessoa {
     public void setEmail(String email) {
         this.email = email;
 
-    }
-
+    }     
 }

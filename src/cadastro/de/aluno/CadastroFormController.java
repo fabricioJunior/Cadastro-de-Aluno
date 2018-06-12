@@ -46,6 +46,7 @@ public class CadastroFormController implements Initializable {
     private TextField nota3Text;
     @FXML
     private TextArea informaçõesText;
+
     private ArrayList<TextField> fields = new ArrayList<TextField>();
     private DaHelpsCadastroFormulário help = new DaHelpsCadastroFormulário();
 
