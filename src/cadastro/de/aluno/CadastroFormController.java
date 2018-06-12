@@ -85,8 +85,9 @@ public class CadastroFormController implements Initializable {
         }
         return true;
     }
+    
     /**
-     *
+     *Método para cadastrar o aluno atual e receber inforações do usuário seguinte
      */
     public void cadastraBtn_Clicked() {
         
@@ -123,7 +124,7 @@ public class CadastroFormController implements Initializable {
     }
     
     /**
-     *
+     *Cadastro dos dados do usuário
      * @param e
      */
     public void cadastraBtn_KeyPressed(KeyEvent e) {
@@ -133,21 +134,21 @@ public class CadastroFormController implements Initializable {
     }
 
     /**
-     *
+     * Exibe os dados do próximo usuário da lista
      */
     public void proximoBtn_Clicked() {
         informaçõesText.setText(help.AlunoProximo());
     }
 
     /**
-     *
+     *Exibe os dados do usuário anterior da lista
      */
     public void anteriorBtn_Clicked() {
         informaçõesText.setText(help.AlunoAnterior());
     }
 
     /**
-     *
+     *Exibe os dados do próximo usuário da lista
      * @param e
      */
     public void proximoBtn_KeyPressed(KeyEvent e) {
@@ -157,7 +158,7 @@ public class CadastroFormController implements Initializable {
     }
 
     /**
-     *
+     *Exibe os dados do usuário anterior da lista
      * @param e
      */
     public void anteriorBtn_KeyPressed(KeyEvent e) {
@@ -167,7 +168,7 @@ public class CadastroFormController implements Initializable {
     }
 
     /**
-     *
+     *Exclui o usuário atual da lista
      */
     public void excluirBtn_Clicked() {
         if (!help.deleteAluno()) {
@@ -182,7 +183,7 @@ public class CadastroFormController implements Initializable {
     }
 
     /**
-     *
+     *Exclui o usuário atual da lista
      * @param e
      */
     public void excluirBtn_KeyPressed(KeyEvent e) {
@@ -192,7 +193,7 @@ public class CadastroFormController implements Initializable {
     }
     
     /**
-     *
+     *Exclui todos os dados digitados na área de texto
      */
     public void limparCampos(){
       nomeText.clear();

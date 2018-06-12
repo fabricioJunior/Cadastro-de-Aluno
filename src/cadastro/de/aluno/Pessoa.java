@@ -148,8 +148,5 @@ abstract public class Pessoa {
        this.ano = ano;
     }
     
-    
-
-    
 
 }

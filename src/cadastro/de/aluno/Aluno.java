@@ -20,7 +20,7 @@ public class Aluno extends Pessoa {
     
     
     /**
-     *MÉTODO PARA CALCULAR A MÉDIA DO ALUNO
+     *Método para calcular a média do aluno
      * @return média das três notas: nota1, nota2, nota3
      */
     public float getMedia() {
@@ -28,7 +28,7 @@ public class Aluno extends Pessoa {
     }
 
     /**
-     *MÉTODO PARA A SITUAÇÃO FINAL DO ALUNO
+     *Método para a situação final do aluno
      * @return "Aprovado por média", "Reprovado" ou "De AF"
      */
     public String getSituação() {
@@ -78,6 +78,7 @@ public class Aluno extends Pessoa {
         this.matricula = matricula;
     }
 
+    
     /**
      * @return the nota1
      */
@@ -92,6 +93,7 @@ public class Aluno extends Pessoa {
         this.nota1 = nota1;
     }
 
+    
     /**
      * @return the nota2
      */
@@ -106,6 +108,7 @@ public class Aluno extends Pessoa {
         this.nota2 = nota2;
     }
 
+    
     /**
      * @return the nota3
      */
@@ -122,7 +125,8 @@ public class Aluno extends Pessoa {
 
 
     /**
-     *MÉTODO equals SOBRESCRITO
+     *Método equals sobrescrito
+     * verifica se dois objetos do tipo Aluno são iguais a partir da matrícula
      * @param x
      * @return 
      */
@@ -139,7 +143,7 @@ public class Aluno extends Pessoa {
     }
 
     /**
-     * MÉTODO toString SOBRESCRITO
+     * Método toString sobrescrito
      * @return exibição dos dados fornecidos pelo usúario
      */
     @Override
