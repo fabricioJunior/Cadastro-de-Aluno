@@ -80,12 +80,11 @@ abstract public class Pessoa {
        this.mês = mês;
     } 
 
-<<<<<<< HEAD
-=======
+
     protected void setAno(int ano) {
        this.ano = ano;
     }
->>>>>>> 62e2455f944092886d0e24f42268a691930a12a8
+
     /**
      * @return the dia
      */
@@ -144,32 +143,9 @@ abstract public class Pessoa {
     /**
      * @param email the email to set
      */
-<<<<<<< HEAD
-    public class Data {
-
-        /**
-         *
-         */
-        public int dia;
-
-        /**
-         *
-         */
-        public int mês;
-
-        /**
-         *
-         */
-        public int ano;
-
-        @Override
-        public String toString() {
-            return dia + "/" + mês + "/" + ano;
-        }
-=======
     public void setEmail(String email) {
         this.email = email;
->>>>>>> 62e2455f944092886d0e24f42268a691930a12a8
+
     }
 
 }
