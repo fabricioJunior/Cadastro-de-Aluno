@@ -36,7 +36,7 @@ abstract public class Pessoa {
    
     
     /**
-     * MÉTODO PARA CALCULAR A IDADE. Esses trecho pode ser acessado em: 
+     * Método para calcular a idade do usuário. Esses trecho pode ser acessado em: 
      * https://pt.stackoverflow.com/questions/69270/calcular-idade-por-dia-mes-e-ano
      * @return idade da pessoa a partir das váriaveis dia, mês e ano.
      * @see data
@@ -50,8 +50,8 @@ abstract public class Pessoa {
 
 
     /**
-     * MÉTODO PARA RETORNAR A DATA DE NASCIMENTO
-     * @return data de nascimento do usuário
+     * Método para a data de nascimento
+     * @return data de nascimento do usuário: "dia/mês/ano";
      */
     protected String getDataDeNascimento() {
         return dia + "/" + mês + "/" + ano;
@@ -150,23 +150,6 @@ abstract public class Pessoa {
     
     
 
-    /**
-     */
-    public class Data {
-        
-        public int dia;
-        public int mês;
-        public int ano;
-
-        /**
-         * @return
-         */
-        @Override
-        public String toString() {
-            return dia + "/" + mês + "/" + ano;
-        }
-
     
-    }
 
 }
