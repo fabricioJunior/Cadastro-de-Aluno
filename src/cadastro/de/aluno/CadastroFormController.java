@@ -47,7 +47,9 @@ public class CadastroFormController implements Initializable {
     private TextField nota3Text;
     @FXML
     private TextArea informaçõesText;
-
+    @FXML
+    private Label qtdInfoLabel;
+    
     private final ArrayList<TextField> fields = new ArrayList<>();
     private final DaHelpsCadastroFormulário help = new DaHelpsCadastroFormulário();
 
@@ -112,6 +114,7 @@ public class CadastroFormController implements Initializable {
                 } else if (!help.getAlunos().contains(novo)) {
                     help.getAlunos().add(novo);
                     informaçõesText.setText(help.getUltimoAlunoInformações());
+                    atualizarQuantidade();
                     limparCampos();
                 } else {
                     JOptionPane.showMessageDialog(null, "Aluno já cadastrado, verifique o número de matrícula", "erro", JOptionPane.ERROR_MESSAGE);
@@ -182,7 +185,7 @@ public class CadastroFormController implements Initializable {
         } else {
             informaçõesText.setText("");
         }
-
+        atualizarQuantidade();
     }
 
     /**
@@ -212,6 +215,13 @@ public class CadastroFormController implements Initializable {
         nota3Text.clear();
     }
 
+    /**
+     * Função que verifica se a String passada no paramêtro correção não contem
+     * nenhum caractere não númerico
+     *
+     * @param correção String para ser analisada
+     * @return false caso a string contenha apenas números
+     */
     private boolean ContemLetras(String correção) {
         float valor;
         if (correção != null) {
@@ -223,5 +233,21 @@ public class CadastroFormController implements Initializable {
             }
         }
         return false;
+    }
+
+    /**
+     * Procedimento que atualiza Label na parte superior da interface gráfica
+     * responsável por informa a quantidade de alunos cadastrados
+     *
+     */
+    public void atualizarQuantidade() {
+        int qtd = help.getAlunos().size();
+        if (qtd == 0) {
+            qtdInfoLabel.setText("Controle de Alunos- Nenhum aluno cadastrado");
+        } else if (qtd == 1) {
+            qtdInfoLabel.setText("Controle de Alunos- 1 aluno cadastrado");
+        } else {
+            qtdInfoLabel.setText("Controle de Alunos- " + qtd + " alunos cadastrados");
+        }
     }
 }
